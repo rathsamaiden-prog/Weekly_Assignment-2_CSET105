@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 
 .game{
@@ -35,7 +36,7 @@
 }
 
 .button1:focus {
-  outline: 2px solid red; /* Or any desired color and style */
+  outline: 3px solid red; /* Or any desired color and style */
 }
 
 .button2{
