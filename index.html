@@ -25,14 +25,15 @@
 <template id="resultTemplate">
     <div class="vs">
         <div class="block"></div>
+        <p class="VStext">VS</p>
         <div class="block"></div>
     </div>
     <div class="iconline">
-        <img src="images/player win2.png" alt="winner or loser image" class="winloseicon"> player wins!!
+        <img src="images/player win2.png" alt="winner or loser image" class="winloseicon">
     </div>
-    <button onclick="changeTemplate(`gameTemplate`)">Next round!</button>
+    <button class="nextround" onclick="changeTemplate(`gameTemplate`)">Next round!</button>
     <img src=" " id="player-image">
-    <img src=" " id="cpu-image">
+    <img src=" " id="cpu-image" 
 </template>
 
 
