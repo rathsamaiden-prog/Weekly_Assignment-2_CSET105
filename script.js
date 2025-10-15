@@ -1,6 +1,9 @@
-let tempGame = document.getElementsByClassName(`gameTemplate`)[0];
+let tempGame = document.getElementById(`gameTemplate`);
 let cloneGame = tempGame.content.cloneNode(true);
-document.body.appendChild(cloneGame);
+let app = document.createElement('div');
+app.id = 'app';
+app.appendChild(cloneGame);
+document.body.appendChild(app);
 
 let player = {input: null, wins: null}
 let computer = {input: null, wins: null}
@@ -8,12 +11,11 @@ function moveSelect(btn){
     player.input = btn.id
 }
 
-
-let round = `Player - ${playerInput}, Computer - ${computerInput}`
+let round = null
 let ties = null
-let score = `Score: Player - ${player.wins}, Computer - ${computer.wins}, Tie - ${ties}`;
-let inputType = [`rock`, `paper`, `scissor`]
+let score = null
 function shoot(){
+    let inputType = [`rock`, `paper`, `scissor`]
     let randSelect = inputType[Math.floor((Math.random()*3))]
     computer.input = randSelect
 
@@ -26,18 +28,15 @@ function shoot(){
         player.wins++
     else
         computer.wins++
-
-    document.body.innerHTML = ``
-    let tempResult = document.getElementsByClassName(`resultTemplate`)[0];
-    let cloneResult = tempResult.content.cloneNode(true);
-    document.body.appendChild(cloneResult);
+    score = `Score: Player - ${player.wins}, Computer - ${computer.wins}, Tie - ${ties}`;
+    round = `Player - ${player.input}, Computer - ${computer.input}`
+    changeTemplate(`resultTemplate`)
 }
 
-
-
-function playGame(){
-    document.body.innerHTML = ``
-    let tempGame = document.getElementsByClassName(`gameTemplate`)[0];
-    let cloneGame = tempGame.content.cloneNode(true);
-    document.body.appendChild(cloneGame);
+function changeTemplate(templateId){
+    let template = document.getElementById(templateId);
+    let content = template.content.cloneNode(true);
+    let appEl = document.getElementById('app');
+    appEl.innerHTML = '';
+    appEl.appendChild(content);
 }
