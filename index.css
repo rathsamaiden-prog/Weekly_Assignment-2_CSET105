@@ -85,3 +85,19 @@ margin: 0 auto;
     height: 50px;
     width: 70px;
 }
+
+
+#score{
+position: relative;
+width: 500px;
+height: 400px;
+}
+
+#scoreblock {
+position: absolute;
+top: 0;
+right: 0;
+width: 200px;
+height: 400px;
+background-color: lightgray;
+}
