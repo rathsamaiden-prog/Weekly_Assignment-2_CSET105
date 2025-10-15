@@ -8,39 +8,33 @@
 </head>
 <body>
 
-<template>
-<div class="game">
-<button class="button1"><img src="images/paper.png" alt="picture of paper" id="paper"></button>
-<button class="button1"><img src="images/rock2.png" alt="picture of rock" id="rock"></button>
-<button class="button1"><img src="images/sissor2.png" alt="picture of sissors" id="sissor"></button>
-</div>
+<template id="gameTemplate">
+    <div>
+        <button class="button1" onclick="moveSelect(this)"><img src="images/paper.png" alt="picture of paper" id="paper"></button>
+        <button class="button1" onclick="moveSelect(this)"><img src="images/rock2.png" alt="picture of rock" id="rock"></button>
+        <button class="button1" onclick="moveSelect(this)"><img src="images/sissor2.png" alt="picture of sissors" id="sissor"></button>
+    </div>
 
-<button class="button2">Shoot!</button>
+    <button class="button2" onclick="shoot()">Shoot!</button>
 
-<div class="score">
+    <div class="score">
 
-</div>
+    </div>
 </template>
 
-
-<div class="vs">
-<div class="block"></div>
-<p class="VStext">VS</p>
-<div class="block"></div>
-</div>
-
-
-<div class="iconline">
-    <img src="images/player win2.png" alt="winner or loser image" class="winloseicon">
-</div>
-
-<button class="nextround">Next round!</button>
-
-
-
-<img src=" " id="player-image">
-<img src=" " id="cpu-image"
-
+<template id="resultTemplate">
+    <div class="vs">
+        <div class="block"></div>
+        <p class="VStext">VS</p>
+        <div class="block"></div>
+    </div>
+    <div class="iconline">
+        <img src="images/player win2.png" alt="winner or loser image" class="winloseicon">
+    </div>
+    <button class="nextround" onclick="changeTemplate(`gameTemplate`)">Next round!</button>
+    <img src=" " id="player-image">
+    <img src=" " id="cpu-image" 
+</template>
 
 
 <script src="script.js"></script>
