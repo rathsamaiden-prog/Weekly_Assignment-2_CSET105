@@ -37,9 +37,6 @@ function shoot(){
     document.getElementById(`cpuInput`).src = `images/${computer.input}.png`
     score = `Score: Player - ${player.wins}, Computer - ${computer.wins}, Tie - ${ties}`;
     round = `Player - ${player.input}, Computer - ${computer.input}`
-    console.log(score)
-    console.log(round)
-    
 }
 
 function changeTemplate(templateId){
@@ -48,4 +45,8 @@ function changeTemplate(templateId){
     let appEl = document.getElementById('app');
     appEl.innerHTML = '';
     appEl.appendChild(content);
+    if(templateId === `resultTemplate`){
+        let scoreBlock = document.getElementById('scoreblock');
+        scoreBlock.innerHTML = `<p>${score}</p><p>${round}</p>`;
+    }
 }
